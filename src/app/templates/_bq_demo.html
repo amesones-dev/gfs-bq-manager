@@ -1,0 +1,17 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+
+    <div class="col-md-6">
+
+        {% if form %}
+            <h4>Select a country from the list</h4>
+            {{ wtf.quick_form(form) }}
+        {% endif %}
+        {% if reset_content_form %}
+            {{ wtf.quick_form(reset_content_form) }}
+        {% endif %}
+    </div>
+
+
+{% endblock %}
