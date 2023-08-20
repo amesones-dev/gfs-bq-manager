@@ -35,7 +35,7 @@ export LOCAL_DOCKER_IMG_TAG="${REPO_NAME}-${FEATURE_BRANCH}-${RID}"
 ```
 ```shell
 # Running code integrated unittests
-export TID=$(python -c "import uuid;print(uuid.uuid4())")
+export TEST_ID=$(python -c "import uuid;print(uuid.uuid4())")
 # Tests named based on build docker image
 export LOCAL_DOCKER_IMG_TAG_TEST="test-${LOCAL_DOCKER_IMG_TAG}"
 docker build . -f ./run/Dockerfile-tests   -t ${LOCAL_DOCKER_IMG_TAG_TEST}  --no-cache --progress=plain  2>&1 | tee ${BUILD_ID}.log

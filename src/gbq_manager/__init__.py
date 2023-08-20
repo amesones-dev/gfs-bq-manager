@@ -55,10 +55,11 @@ class GBQManager:
         # BQ_SA_KEY_JSON_FILE = ''
 
         validation = False
+        required = ['BQ_SA_KEY_JSON_FILE']
         if 'config' in app.__dict__:
             if isinstance(app.config, dict):
                 # Check mandatory config keys exist
-                if 'BQ_SA_KEY_JSON_FILE' in app.config.keys():
+                if set(required).issubset(app.config.keys()):
                     validation = app.config['BQ_SA_KEY_JSON_FILE'] == "" \
                                  or (app.config['BQ_SA_KEY_JSON_FILE'] != ""
                                      and os.path.isfile(app.config['BQ_SA_KEY_JSON_FILE']))
