@@ -3,10 +3,7 @@ import warnings
 
 # App specific imports
 from config import TestConfig
-from src.gbq_manager import GBQManager
-
-from src.gbq_content_manager import BigQueryContent, AppBQContentManager
-
+from gbq_manager import GBQManager
 
 # Config import
 
