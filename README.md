@@ -6,10 +6,6 @@ A basic example of how to leverage [BigQuery API Client Libraries](https://cloud
 It runs queries to a public dataset to generate content for an API or application.
 As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.
 
-## Connecting your application to Google Cloud BigQuery
-
-TODO: Summary on how to connect and use BigQuery in applications
-
 ## GBQManager class
 
 **GBQManager**
