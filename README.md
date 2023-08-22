@@ -4,7 +4,9 @@
 ## Add application content with BigQuery
 A basic example of how to leverage [BigQuery API Client Libraries](https://cloud.google.com/bigquery/docs/reference/libraries) to produce content for the application.
 It runs queries to a public dataset to generate content for an API or application.
-As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.
+As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.  
+
+
 
 ## GBQManager class
 
@@ -131,6 +133,8 @@ At this point you are ready to configure and run the application.
    ```
 
 
+**Example application**
+![Example application](/docs/res/img/gfsBQDemoApp.png)
 
 
 
