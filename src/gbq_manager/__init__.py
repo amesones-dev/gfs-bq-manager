@@ -1,5 +1,6 @@
 from google.cloud import bigquery
 import os
+import logging
 
 
 class GBQManager:
@@ -17,14 +18,16 @@ class GBQManager:
                 try:
                     self.client = bigquery.Client()
                 except Exception as e:
-                    print("Exception {}:{} Method: {}".format(e.__class__, e, self.init_app.__name__))
+                    logging.log(level=logging.ERROR,
+                                msg="Exception {}:{} Method: {}".format(e.__class__, e, self.init_app.__name__))
                     pass
             else:
                 # Credential from file
                 try:
                     self.client = bigquery.Client.from_service_account_json(sa_creds_json_file)
                 except Exception as e:
-                    print("Exception {}:{} Method: {}".format(e.__class__, e, self.init_app.__name__))
+                    logging.log(level=logging.ERROR,
+                                msg="Exception {}:{} Method: {}".format(e.__class__, e, self.init_app.__name__))
                     pass
             if self.initialized():
                 self.app = app

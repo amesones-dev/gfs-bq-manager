@@ -1,6 +1,6 @@
 import base64
 import datetime
-
+import logging
 
 class BigQueryContent:
 
@@ -68,7 +68,8 @@ class AppBQContentManager:
                     output.append(row)
                 data = [dict(row) for row in output]
             except Exception as e:
-                print("Exception {}:{} Method: {}".format(e.__class__, e, self.bq_run.__name__))
+                logging.log(level=logging.ERROR, msg="Exception {}:{} Method: {}".format(e.__class__, e,
+                                                                                         self.bq_run.__name__))
                 data = None
         return data
 
@@ -87,7 +88,6 @@ class AppBQContentManager:
                 # Key includes method name and country
                 content_key = content_key + '@' + country.lower()
 
-        # print("Content_key: {}".format(content_key))
         # See if a local BigQueryContent exists in local content_manager
         local_content = content_manager.contents.get(content_key)
         if local_content is None:
@@ -101,7 +101,6 @@ class AppBQContentManager:
         else:
             # Already in local runner memory
             # Here check freshness and see whether it needs re-running
-            # print("Content already in local runner memory:{}  ".format(local_content.last_run))
             if isinstance(local_content, BigQueryContent):
                 if local_content.last_run != datetime.date.today() or local_content.data is None:
                     # bq_run could return None in case of BQ error
