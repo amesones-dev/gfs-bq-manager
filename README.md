@@ -14,7 +14,6 @@ This example uses a public dataset for worldwide CV19 infections statistics  que
 * [Source: covid19_jhu_csse_eu.summary](https://ccp.jhu.edu/kap-covid)  
 
 
-
 ## GBQManager class
 
 **GBQManager**
