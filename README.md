@@ -7,7 +7,7 @@ It runs queries to a public dataset to generate content for an API or applicatio
 As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.
 
 This example uses a public dataset for worldwide CV19 infections statistics  queried using 
-[BigQuery public datasets](https://cloud.google.com/bigquery/public-data) to generate application content.  
+[BigQuery public datasets](https://cloud.google.com/bigquery/public-data) to generate API content.  
 
 **Example dataset source**
 * [BigQuery public dataset](https://console.cloud.google.com/marketplace/product/johnshopkins/covid19_jhu_global_case)
