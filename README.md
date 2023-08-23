@@ -4,7 +4,14 @@
 ## Add application content with BigQuery
 A basic example of how to leverage [BigQuery API Client Libraries](https://cloud.google.com/bigquery/docs/reference/libraries) to produce content for the application.
 It runs queries to a public dataset to generate content for an API or application.
-As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.  
+As an example, a public dataset for worldwide CV19 infections statistics is queried to generate content served  upon request.
+
+This example uses a public dataset for worldwide CV19 infections statistics  queried using 
+[BigQuery public datasets](https://cloud.google.com/bigquery/public-data) to generate application content.  
+
+**Example dataset source**
+* [BigQuery public dataset](https://console.cloud.google.com/marketplace/product/johnshopkins/covid19_jhu_global_case)
+* [Source: covid19_jhu_csse_eu.summary](https://ccp.jhu.edu/kap-covid)  
 
 
 
@@ -17,16 +24,16 @@ As an example, a public dataset for worldwide CV19 infections statistics is quer
 
 **Class use example to manage BigQuery connections for an app**  
 
-*Link BigQueryManager to app*
+*Link GBQManager to app*
 ```console
     # App specific
-    # Link BigQueryManager to app
-    bq = BigQueryManager()
+    # Link GBQManager to app
+    bq = GBQManager()
     bq.init_app(self.app)
 ```
 
 
-*Use BigQueryManager to run BigQuery query jobs*    
+*Use GBQManager to run BigQuery query jobs*    
 ```console    
     sql_query = """SELECT DISTINCT country_region  
                 FROM `bigquery-public-data.covid19_jhu_csse_eu.summary`  
