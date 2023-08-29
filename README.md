@@ -16,6 +16,7 @@ to use [BigQuery](https://cloud.google.com/bigquery/)  content for python applic
 
 *Link GBQManager to app*
 ```python
+	from gbq_manager import GBQManager
     # App specific
     # Link GBQManager to app
     bq = GBQManager()
