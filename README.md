@@ -139,7 +139,8 @@ At this point you are ready to configure and run the application.
    ```
 
 
-**Example application**
+**Example application**  
+
 ![Example application](/docs/res/img/gfsBQDemoApp.png)
 
 
